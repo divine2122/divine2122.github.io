@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <title>Picker WebApp</title>
+  </head>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCLsOqGXtrMHFqWqzEy-aI_f_vBp1h80Vg",
+    authDomain: "dazzling-plate-277321.firebaseapp.com",
+    databaseURL: "https://dazzling-plate-277321.firebaseio.com",
+    projectId: "dazzling-plate-277321",
+    storageBucket: "dazzling-plate-277321.appspot.com",
+    messagingSenderId: "929271141037",
+    appId: "1:929271141037:web:6a4d88486e7e367de6ec24",
+    measurementId: "G-X2RX8GE3G8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<!--<script src="app.js" defer></script>
+-->
+
+
+<style type="text/css">
+  body {background-color: rgb(212, 161, 19)}
+  p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+  li.li3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Times; color: #000000; min-height: 14.0px}
+  span.s1 {font-kerning: none}
+  ul.ul1 {list-style-type: none}
+  h1 {line-height: 12.0px; font: Times; color:#000000}
+  h2 {font-size:40px; color:#000000}
+  h3 {line-height: 0px; font-size: 14px; color:#000000}
+
+</style>
+
+
+
+<!--google login behavior-->
+<body>
+
+ <h1></h1>
+
+<section id="whenSignedOut">
+  <button id="signInBtn">Sign in with Google</button>
+</section>
+
+<section id="whenSignedIn" hidden="true">
+  <div id="userDetails"></div>
+  <button id="signOutBtn">Sign Out</button>
+
+</section>
+
+<!--Loads Firebase student info to page-->
+<section>
+
+  <h2>Firestore Class Data</h2>
+
+  <ul id="thingsList">
+    
+  </ul>
+
+  <button id="createThing" class="btn btn-success">Create New Student</button>
+
+</section>
+
+
+
+<!--Ignore this block. was borrowed from original code, doesnt do anything-->
+<div id="rollOutput"></div>
+<input id="rollNumber" value="100"/>
+<button id="reRollBtn" class="btn disabled">reroll</button>
+
+<!--Button to pick another student (testing)-->
+<div id="pickerDisplay"></div>
+<button id="rePickBtn" class="btn btn-success">Re Pick</button>
+
+
+<div id="beepboopDisplay"></div>
+
+
+<!--Buttons for teacher interaction (currently logs each score to student object, then repicks another student)-->
+<button id="bien" class="btn btn-success">Bien</button>
+<button id="muybien" class="btn btn-success">Muy Bien</button>
+<button id="perfecto" class="btn btn-success">Perfecto</button>
+
+<!--Working on functionality of this. Currently does nothing-->
+<button id="beepboop" class="btn btn-success">BeepBoop</button>
+
+<!--Impt that this is loaded last on the page-->
+<script src="Picker.js" defer></script>
+
+</body>
+
+</html>
